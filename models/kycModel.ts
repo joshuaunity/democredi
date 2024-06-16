@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import db from "../config/database";
 
 export interface Kyc {
@@ -13,7 +14,11 @@ export interface Kyc {
 }
 
 export const createKyc = async (kyc: Partial<Kyc>): Promise<Kyc | Error> => {
-    await db("kycs").insert({ ...kyc }).returning("id");
+    const kycId = uuidv4();
+    await db("kycs").insert({
+        id: kycId,
+        ...kyc
+    }).returning("id");
     if (!kyc.userId) {
         return new Error("Failed to create kyc");
     }
