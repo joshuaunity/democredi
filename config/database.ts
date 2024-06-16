@@ -7,12 +7,12 @@ const db: Knex = knex({
 });
 
 // Test the database connection
-db.raw('SELECT 1')
-    .then(() => {
-        console.log('Database connection successful');
-    })
-    .catch((error: any) => {
-        console.error('Error connecting to database:', error.message);
-    });
+// db.raw('SELECT 1')
+//     .then(() => {
+//         console.log('Database connection successful');
+//     })
+//     .catch((error: any) => {
+//         console.error('Error connecting to database:', error.message);
+//     });
 
 export default db;
