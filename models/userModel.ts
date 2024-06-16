@@ -37,6 +37,7 @@ export const createUser = async (
   await db("users").insert({
     id,
     ...user,
+    archived: false,
     createdAt: now,
     updatedAt: now,
   });
