@@ -13,9 +13,6 @@ RUN npm install --production
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Build TypeScript
-RUN npm run build
-
 # Expose the port your app runs on
 EXPOSE 5000
 
