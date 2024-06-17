@@ -1,5 +1,7 @@
 # DemoCredi
 
+Project Docs - [Google Docs](https://docs.google.com/document/d/1VnwYsXqVtmAfgXV4hDesEkFwOptiBJpWtMwUTWF0SMg/edit?usp=sharing)
+
 ## Instructions
 
 ### Clone the Repository
