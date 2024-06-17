@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "build": "rimraf dist && npx tsc",
-    "prestart": "npm run build",
+    "prestart": "npm run build && knex migrate:latest",
     "start": "concurrently \"npx tsc -w\"  \"nodemon dist/src/server.js\"",
     "preserve": "npm run build",
     "serve": "concurrently \"npx tsc -w\"  \"nodemon dist/src/server.js\"",

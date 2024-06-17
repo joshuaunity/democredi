@@ -6,7 +6,7 @@ dotenv.config();
 const config = {
     port: process.env.PORT || 5000,
     db: {
-        client: 'mysql',
+        client: 'mysql2',
         connection: {
             host: process.env.DB_HOST || 'localhost',
             port: process.env.DB_PORT || 3306, 
