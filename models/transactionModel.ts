@@ -2,11 +2,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { Knex } from "knex";
 import db from "../config/database";
 
-export enum TransactionType { 
+export enum TransactionType {
     Credit = "credit",
     Debit = "debit",
 }
-export interface Transaction { 
+export interface Transaction {
     id?: string;
     walletId?: string;
     amount: number;

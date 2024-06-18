@@ -25,6 +25,7 @@ const config = {
             database: 'democreditest',
         },
     },
+    testMode: process.env.TEST_MODE || 'true',
     jwt: {
         secret: process.env.JWT_SECRET || 'samplesecret',
         expiresIn: process.env.JWT_EXPIRES_IN || '1h',
