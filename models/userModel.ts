@@ -66,12 +66,12 @@ export const updateUser = async (
 export const getUserById = async (id: string): Promise<User | Error> => {
   const userRecord: User | undefined = await db<User>('users')
     .where({ id })
-    .andWhere('archived', false)
     .first();
-
-  if (!userRecord) {
+  
+  if (userRecord === undefined) {
     return new Error('User not found');
   }
+
   return userRecord;
 };
 
@@ -87,12 +87,14 @@ export const getUserByEmail = async (email: string): Promise<User | Error> => {
 export const archiveUser = async (id: string): Promise<void | Error> => {
   await db("users").where({ id }).update({ archived: true });
   const userRecord = await getUserById(id.toString());
-  console.log("===============", userRecord);
+
   if (userRecord instanceof Error) {
-    return new Error("Failed to archive user");
-  } else if (userRecord.archived) {
+    return new Error("Failed to archive user - Error");
+  } else if (!userRecord.archived) {
     return new Error("Failed to archive user");
   }
+
+  return;
 };
 
 export const allUsers = async (): Promise<User[]> => {

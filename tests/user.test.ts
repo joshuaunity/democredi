@@ -21,115 +21,115 @@ afterAll(async () => {
 });
 
 describe("User Model", () => {
-    // test("should create a new user", async () => {
-    //     const newUser: Partial<User> = {
-    //         firstName: "John",
-    //         lastName: "Doe",
-    //         email: "john.doe@example.com",
-    //         pin: "password123",
-    //         accountType: AccountType.Lender,
-    //     };
+    test("should create a new user", async () => {
+        const newUser: Partial<User> = {
+            firstName: "John",
+            lastName: "Doe",
+            email: "john.doe@example.com",
+            pin: "password123",
+            accountType: AccountType.Lender,
+        };
 
-    //     const createdUser = await createUser(newUser);
+        const createdUser = await createUser(newUser);
 
-    //     if (createdUser instanceof Error) {
-    //         throw createdUser;
-    //     }
+        if (createdUser instanceof Error) {
+            throw createdUser;
+        }
 
-    //     expect(createdUser).toHaveProperty("id");
-    //     expect(createdUser.firstName).toBe(newUser.firstName);
-    //     expect(createdUser.lastName).toBe(newUser.lastName);
-    //     expect(createdUser.email).toBe(newUser.email);
-    //     expect(createdUser.accountType).toBe(newUser.accountType);
-    // });
+        expect(createdUser).toHaveProperty("id");
+        expect(createdUser.firstName).toBe(newUser.firstName);
+        expect(createdUser.lastName).toBe(newUser.lastName);
+        expect(createdUser.email).toBe(newUser.email);
+        expect(createdUser.accountType).toBe(newUser.accountType);
+    });
 
-    // test("should update an existing user", async () => {
-    //     const newUser: Partial<User> = {
-    //         firstName: "John",
-    //         lastName: "Doe",
-    //         email: "john.doe@example.com",
-    //         pin: "password123",
-    //         accountType: AccountType.Lender,
-    //     };
+    test("should update an existing user", async () => {
+        const newUser: Partial<User> = {
+            firstName: "John",
+            lastName: "Doe",
+            email: "john.doe@example.com",
+            pin: "password123",
+            accountType: AccountType.Lender,
+        };
 
-    //     const createdUser = await createUser(newUser);
-    //     if (createdUser instanceof Error) {
-    //         throw createdUser;
-    //     }
+        const createdUser = await createUser(newUser);
+        if (createdUser instanceof Error) {
+            throw createdUser;
+        }
 
-    //     const updates: Partial<User> = {
-    //         firstName: "Johnny",
-    //         lastName: "Doe",
-    //         email: "johnathan@email.com",
-    //     };
+        const updates: Partial<User> = {
+            firstName: "Johnny",
+            lastName: "Doe",
+            email: "johnathan@email.com",
+        };
 
-    //     const updatedUser = await updateUser(createdUser.id, updates);
+        const updatedUser = await updateUser(createdUser.id, updates);
 
-    //     if (updatedUser instanceof Error) {
-    //         throw updatedUser;
-    //     }
+        if (updatedUser instanceof Error) {
+            throw updatedUser;
+        }
 
-    //     expect(updatedUser).toHaveProperty("id");
-    //     expect(updatedUser.firstName).toBe(updates.firstName);
-    //     expect(updatedUser.lastName).toBe(updates.lastName);
-    //     expect(updatedUser.email).toBe(updates.email);
-    // });
+        expect(updatedUser).toHaveProperty("id");
+        expect(updatedUser.firstName).toBe(updates.firstName);
+        expect(updatedUser.lastName).toBe(updates.lastName);
+        expect(updatedUser.email).toBe(updates.email);
+    });
 
-    // test("should get a user by id", async () => {
-    //     const newUser: Partial<User> = {
-    //         firstName: "John",
-    //         lastName: "Doe",
-    //         email: "john.doe@example.com",
-    //         pin: "password123",
-    //         accountType: AccountType.Lender,
-    //     };
+    test("should get a user by id", async () => {
+        const newUser: Partial<User> = {
+            firstName: "John",
+            lastName: "Doe",
+            email: "john.doe@example.com",
+            pin: "password123",
+            accountType: AccountType.Lender,
+        };
 
-    //     const createdUser = await createUser(newUser);
-    //     if (createdUser instanceof Error) {
-    //         throw createdUser;
-    //     }
+        const createdUser = await createUser(newUser);
+        if (createdUser instanceof Error) {
+            throw createdUser;
+        }
 
-    //     const user = await getUserById(createdUser.id);
+        const user = await getUserById(createdUser.id);
 
-    //     if (user instanceof Error) {
-    //         throw user;
-    //     }
+        if (user instanceof Error) {
+            throw user;
+        }
 
-    //     expect(user).toHaveProperty("id");
-    //     expect(user.id).toBe(createdUser.id);
-    //     expect(user.firstName).toBe(newUser.firstName);
-    //     expect(user.lastName).toBe(newUser.lastName);
-    //     expect(user.email).toBe(newUser.email);
-    //     expect(user.accountType).toBe(newUser.accountType);
-    // });
+        expect(user).toHaveProperty("id");
+        expect(user.id).toBe(createdUser.id);
+        expect(user.firstName).toBe(newUser.firstName);
+        expect(user.lastName).toBe(newUser.lastName);
+        expect(user.email).toBe(newUser.email);
+        expect(user.accountType).toBe(newUser.accountType);
+    });
 
-    // test("should get a user by email", async () => {
-    //     const newUser: Partial<User> = {
-    //         firstName: "John",
-    //         lastName: "Doe",
-    //         email: "john.doe@example.com",
-    //         pin: "password123",
-    //         accountType: AccountType.Lender,
-    //     };
+    test("should get a user by email", async () => {
+        const newUser: Partial<User> = {
+            firstName: "John",
+            lastName: "Doe",
+            email: "john.doe@example.com",
+            pin: "password123",
+            accountType: AccountType.Lender,
+        };
 
-    //     const createdUser = await createUser(newUser);
-    //     if (createdUser instanceof Error) {
-    //         throw createdUser;
-    //     }
+        const createdUser = await createUser(newUser);
+        if (createdUser instanceof Error) {
+            throw createdUser;
+        }
 
-    //     const user = await getUserByEmail(createdUser.email);
+        const user = await getUserByEmail(createdUser.email);
 
-    //     if (user instanceof Error) {
-    //         throw user;
-    //     }
+        if (user instanceof Error) {
+            throw user;
+        }
 
-    //     expect(user).toHaveProperty("id");
-    //     expect(user.id).toBe(createdUser.id);
-    //     expect(user.firstName).toBe(newUser.firstName);
-    //     expect(user.lastName).toBe(newUser.lastName);
-    //     expect(user.email).toBe(newUser.email);
-    //     expect(user.accountType).toBe(newUser.accountType);
-    // });
+        expect(user).toHaveProperty("id");
+        expect(user.id).toBe(createdUser.id);
+        expect(user.firstName).toBe(newUser.firstName);
+        expect(user.lastName).toBe(newUser.lastName);
+        expect(user.email).toBe(newUser.email);
+        expect(user.accountType).toBe(newUser.accountType);
+    });
 
     test("should archive a user", async () => {
         const newUser: Partial<User> = {
@@ -151,14 +151,13 @@ describe("User Model", () => {
         }
 
         const archivedUser = await getUserById(createdUser.id);
-        console.log(archivedUser);
 
         if (archivedUser instanceof Error) {
             throw archivedUser;
         }
 
         expect(archivedUser).toHaveProperty("id");
-        expect(archivedUser.archived).toBe(true);
+        expect(archivedUser.archived).toBe(1);
     });
 
     test("should get all users", async () => {
