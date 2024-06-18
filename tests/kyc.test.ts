@@ -11,11 +11,8 @@ import {
     User,
     AccountType,
     createUser,
-    getUserById,
-    getUserByEmail,
 } from "../models/userModel";
 import db from "../config/database";
-import e from "cors";
 
 // Ensure the database is cleaned before and after each test
 beforeEach(async () => {
