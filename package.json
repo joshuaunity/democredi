@@ -7,7 +7,7 @@
     "prestart": "npm run build && knex migrate:latest",
     "start": "concurrently \"npx tsc -w\"  \"nodemon dist/src/server.js\"",
     "preserve": "npm run build",
-    "serve": "concurrently \"npx tsc -w\"  \"nodemon dist/src/server.js\"",
+    "serve": "nodemon dist/src/server.js",
     "knex": "knex"
   },
   "keywords": [],
