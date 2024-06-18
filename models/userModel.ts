@@ -87,6 +87,7 @@ export const getUserByEmail = async (email: string): Promise<User | Error> => {
 export const archiveUser = async (id: string): Promise<void | Error> => {
   await db("users").where({ id }).update({ archived: true });
   const userRecord = await getUserById(id.toString());
+  console.log("===============", userRecord);
   if (userRecord instanceof Error) {
     return new Error("Failed to archive user");
   } else if (userRecord.archived) {
