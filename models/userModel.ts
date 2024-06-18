@@ -64,12 +64,13 @@ export const updateUser = async (
 };
 
 export const getUserById = async (id: string): Promise<User | Error> => {
-  const userRecord = await db<User>("users")
+  const userRecord: User | undefined = await db<User>('users')
     .where({ id })
-    .where("archived", false)
+    .andWhere('archived', false)
     .first();
+
   if (!userRecord) {
-    return new Error("User not found");
+    return new Error('User not found');
   }
   return userRecord;
 };

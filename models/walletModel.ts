@@ -107,7 +107,7 @@ export const deposit = async (
     const trx = await db.transaction();
     try {
         const wallet = await getWalletByUserId(userId);
-        
+
         if (wallet instanceof Error) {
             await trx.rollback();
             return wallet;
@@ -117,7 +117,7 @@ export const deposit = async (
         await trx<Wallet>("wallets")
             .where({ userId })
             .update({ balance: newBalance, updatedAt: new Date() });
-        
+
 
         // create transaction
         await createTransaction(trx, narration, {

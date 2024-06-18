@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "paths": {
-      "*": ["src/*"],
+      "*": ["src/*"]
     }
   },
   "include": [
@@ -19,7 +19,8 @@
     "models/**/*.ts",
     "routes/**/*.ts",
     "utils/**/*.ts",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "tests/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

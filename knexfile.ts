@@ -12,7 +12,16 @@ const knexConfig: { [key: string]: Knex.Config } = {
             directory: './src/db/seeds',
         },
     },
-    // Add other environments (e.g., production) here if needed
+    test: {
+        client: 'mysql2',
+        connection: config.dbTest.connection,
+        migrations: {
+            directory: './src/db/migrations',
+        },
+        seeds: {
+            directory: './src/db/seeds',
+        },
+    },
 };
 
 export default knexConfig;
