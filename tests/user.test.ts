@@ -9,7 +9,6 @@ import {
     allUsers,
 } from "../models/userModel";
 import db from "../config/database";
-import { v4 as uuidv4 } from "uuid";
 
 // Ensure the database is cleaned before and after each test
 beforeEach(async () => {
