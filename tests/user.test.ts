@@ -33,13 +33,38 @@ describe('User Model', () => {
             throw createdUser;
         }
 
-        console.log(createdUser);
-
         // Assert user creation
         expect(createdUser).toHaveProperty('id');
         expect(createdUser.firstName).toBe(newUser.firstName);
         expect(createdUser.lastName).toBe(newUser.lastName);
         expect(createdUser.email).toBe(newUser.email);
         expect(createdUser.accountType).toBe(newUser.accountType);
+    });
+
+
+    test('should update an existing user', async () => {
+        // Define test data
+        const userId = uuidv4();
+        const updates: Partial<User> = {
+            firstName: 'Johnny',
+            lastName: 'Doe',
+            email: 'johnathan@email.com',
+        };
+
+        // Mock the updateUser function
+        (updateUser as jest.Mock).mockResolvedValue({ id: userId, ...updates } as User);
+
+        // Call the updateUser function
+        const updatedUser = await updateUser(userId, updates);
+
+        if (updatedUser instanceof Error) {
+            throw updatedUser;
+        }
+
+        // Assert user update
+        expect(updatedUser).toHaveProperty('id');
+        expect(updatedUser.firstName).toBe(updates.firstName);
+        expect(updatedUser.lastName).toBe(updates.lastName);
+        expect(updatedUser.email).toBe(updates.email);
     });
 });
