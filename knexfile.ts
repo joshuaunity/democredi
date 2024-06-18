@@ -15,6 +15,12 @@ const knexConfig: { [key: string]: Knex.Config } = {
     test: {
         client: 'mysql2',
         connection: config.dbTest.connection,
+        migrations: {
+            directory: './src/db/migrations',
+        },
+        seeds: {
+            directory: './src/db/seeds',
+        },
     },
 };
 
