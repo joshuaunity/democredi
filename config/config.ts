@@ -22,7 +22,7 @@ const config = {
             port: process.env.DB_PORT || 3306,
             user: process.env.DB_USER || 'root',
             password: process.env.DB_PASSWORD || '1234',
-            database: 'democreditest',
+            database: process.env.TEST_DB_NAME || 'democreditest',
         },
     },
     testMode: process.env.TEST_MODE || 'true',
