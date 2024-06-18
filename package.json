@@ -8,7 +8,8 @@
     "start": "concurrently \"npx tsc -w\"  \"nodemon dist/src/server.js\"",
     "preserve": "npm run build",
     "serve": "nodemon dist/src/server.js",
-    "knex": "knex"
+    "knex": "knex",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
