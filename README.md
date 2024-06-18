@@ -19,6 +19,12 @@ To stop Docker containers, use:
 docker-compose down
 ```
 
+### Run test suite
+To run the unit test across the project use the below command
+```
+npm test
+```
+
 ### API Collection
 - Insomnia (for testing APIs, download [here](https://insomnia.rest/download))
 
