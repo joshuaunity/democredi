@@ -43,7 +43,7 @@ export const createUser = async (
   });
 
   const userRecord = await getUserById(id);
-  if (!userRecord) {
+  if (userRecord instanceof Error) {
     return new Error("Failed to create user");
   }
 
@@ -56,19 +56,19 @@ export const updateUser = async (
 ): Promise<User | Error> => {
   updates.updatedAt = new Date();
   await db<User>("users").where({ id }).update(updates);
-  const userRecord = await getUserById(id.toString());
-  if (!userRecord) {
+  const userRecord = await getUserById(id);
+  if (userRecord instanceof Error) {
     return new Error("Failed to update user");
   }
   return userRecord;
 };
 
 export const getUserById = async (id: string): Promise<User | Error> => {
-  const userRecord: User | undefined = await db<User>('users')
+  const userRecord = await db<User>('users')
     .where({ id })
     .first();
   
-  if (userRecord === undefined) {
+  if (!userRecord) {
     return new Error('User not found');
   }
 
